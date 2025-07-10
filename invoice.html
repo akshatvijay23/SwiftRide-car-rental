@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Rental Invoice</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+      background: #f8f8f8;
+    }
+    .invoice-box {
+      background: #fff;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .details, .summary {
+      margin-top: 20px;
+    }
+    .details table, .summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .details th, .details td, .summary th, .summary td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    .summary td:last-child {
+      text-align: right;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+      color: #000;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<div class="invoice-box">
+  <h1>Rental Invoice</h1>
+
+  <p><strong>Invoice #: </strong> INV-00123<br>
+  <strong>Date: </strong> May 1, 2025</p>
+
+  <div class="details">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <td>John Doe</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <th>Car Rented</th>
+        <td>Toyota Corolla 2021</td>
+      </tr>
+      <tr>
+        <th>Rental Period</th>
+        <td>April 25 - April 30, 2025</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="summary">
+    <table>
+      <tr>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Daily Rental (5 days × $40)</td>
+        <td>$200.00</td>
+      </tr>
+      <tr>
+        <td>Insurance</td>
+        <td>$30.00</td>
+      </tr>
+      <tr>
+        <td>Additional Driver</td>
+        <td>$20.00</td>
+      </tr>
+      <tr class="total">
+        <td>Total</td>
+        <td>$250.00</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    Thank you for choosing [Your Company Name]!<br>
+    For any questions, contact support@yourdomain.com
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<?php
+session_start();
+$loggedIn = isset($_SESSION['email']);
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarRent</title>
+    <!--Link to css  -->
+    <link rel="stylesheet" href="Style.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+   <!-- Header Section -->
+    <header>
+        <a href="#" class="logo img"><img src="img/jeep.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon">  </div>
+        <ul class="navbar"  id="menu">
+            <li><a href="index.php">Home</a></li>
+            
+            <li><a href="Services.php">Services</a></li>
+            <li><a href="Review.php">Review</a></li>
+            <li><a href="#Bookings">Bookings</a></li>
+            <li><a href="About.php">About</a></li>
+        </ul>
+
+        <!-- login -->
+        <div class="header-btn">
+            <?php if ($loggedIn): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['fullname']); ?>!</span>
+                <a href="logout.php" class="sign-in">Logout</a>
+            <?php else: ?>
+                <a href="registration form/login.html" class="sign-in">Sign-In</a>
+            <?php endif; ?>
+        </div>
+
+          </header>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="heading" id="menu">
+            <span>Reviews</span>
+            <h1>What Our Customers Say</h1>
+        </div>
+        <div class="reviews-container">
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev1.jpg" alt="">
+                </div>
+                <h2>Keshav Somani</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Best services in the town! Highly recommend for everyone looking for reliable car rentals.</p>
+            </div>
+
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev2.jpg" alt="">
+                </div>
+                <h2>Rohit Sharma</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Wonderful experience with excellent customer support and clean vehicles.</p>
+            </div>
+
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev3.jpg" alt="">
+                </div>
+                <h2>Bhavya Gandhi</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Had a great time using their service. Very convenient and affordable!</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2023 CarRent. All rights reserved.</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-linkedin'></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Link to JS -->
+    <script src="Main.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Rental - Payment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <form class="payment-form">
+      <h2>Payment Information</h2>
+
+      <div class="rental-summary">
+        <p><strong>Car:</strong> Toyota Corolla</p>
+        <p><strong>Rental Duration:</strong> 3 Days</p>
+        <p><strong>Total Price:</strong> $150</p>
+      </div>
+
+      <label for="cardname">Cardholder Name</label>
+      <input type="text" id="cardname" name="cardname" required />
+
+      <label for="cardnumber">Card Number</label>
+      <input type="text" id="cardnumber" name="cardnumber" maxlength="16" required />
+
+      <div class="card-details">
+        <div>
+          <label for="expdate">Expiry Date</label>
+          <input type="text" id="expdate" name="expdate" placeholder="MM/YY" required />
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" maxlength="3" required />
+        </div>
+      </div>
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+</body>
+</html>

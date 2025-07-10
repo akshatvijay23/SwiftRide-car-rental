@@ -1,0 +1,285 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+$loggedIn = isset($_SESSION['email']);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarRent</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="Style.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="#" class="logo img"><img src="img/jeep.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar" id="menu">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="Services.php">Services</a></li>
+            <li><a href="Review.php">Review</a></li>
+            <li><a href="About.php">About</a></li>
+        </ul>
+
+        <!-- Login -->
+        <div class="header-btn">
+            <?php if ($loggedIn): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['fullname']); ?>!</span>
+                <a href="logout.php" class="sign-in">Logout</a>
+            <?php else: ?>
+                <a href="login.php" class="sign-in">Sign-In</a>
+            <?php endif; ?>
+        </div>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="text">
+            <h1><span>Looking</span> to <br>Rent a Car</h1>
+            <p>We provide the best car rental services <br>for your convenience.</p>
+
+        </div>
+        <!-- form container -->
+        <div class="form-container">
+            <form action="set_booking.php" method="POST">
+                <div class="input-box">
+                    <span>Location</span>
+                    <input type="text" name="location" placeholder="Search Place" required>
+                </div>
+                <div class="input-box">
+                    <span>Pick-up Date</span>
+                    <input type="date" name="pickup_date" required>
+                </div>
+                <div class="input-box">
+                    <span>Return Date</span>
+                    <input type="date" name="return_date" required>
+                </div>
+                <input type="submit" class="btn" value="Submit">
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Ride -->
+    <section class="ride" id="ride">
+        <div class="heading">
+            <span>How It Works</span>
+            <h1>Rent in three easy steps</h1>
+        </div>
+        <div class="ride-container">
+            <div class="box">
+                <i class='bx bx-map'></i>
+                <h2>Choose a location</h2>
+                <p>Pick your desired location from our extensive network of rental locations across the city.</p>
+            </div>
+            <div class="box">
+                <i class='bx bx-calendar'></i>
+                <h2>Select your dates</h2>
+                <p>Choose the pick-up and return dates that suit your schedule for a hassle-free experience.</p>
+            </div>
+            <div class="box">
+                <i class='bx bx-car'></i>
+                <h2>Pick your car</h2>
+                <p>Browse through a wide range of vehicles and select the one that fits your needs and budget.</p>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="heading">
+            <span>Best Services</span>
+            <h1>Explore Out Top Deals <br> From Top Rated Dealers</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car1.jpg" alt="">
+                </div>
+                <p>2017</p>
+                <h3>2018 Honda Civic</h3>
+                <h2>₹10000 | ₹350 <span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car4.jpeg" alt="">
+                </div>
+                <p>2024</p>
+                <h3>Nisan Magnite</h3>
+                <h2>₹12000 | ₹400 <span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car5.jpeg" alt="">
+                </div>
+                <p>2024</p>
+                <h3>Marceddes benz-S Class</h3>
+                <h2>₹8500 | ₹558 <span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car7.jpeg" alt="">
+                </div>
+                <p>2022</p>
+                <h3>Fortuner Automatic</h3>
+                <h2>₹7200 | ₹600 <span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car8.jpg" alt="">
+                </div>
+                <p>2024</p>
+                <h3>Land Rover Defender</h3>
+                <h2>₹15000 | ₹650<span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="img/car9.jpg" alt="">
+                </div>
+                <p>2021</p>
+                <h3>Toyota Inova Hycross</h3>
+                <h2>₹5500 | ₹358 <span>/month</span></h2>
+                <a href="Services.php" class="btn">Rent Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="heading">
+            <span>About Us</span>
+            <h1>Best Customer Experience</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="img/about.png" alt="">
+            </div>
+
+            <div class="about-text">
+                <span>About Us</span>
+                <p>Welcome to Swift Ride, your trusted partner in reliable and affordable car rental services. Whether
+                    you're traveling for business, going on a weekend getaway, or need a vehicle for daily use, we've
+                    got you covered with a wide range of well-maintained cars to suit every need and budget.</p>
+                <p>Our mission is simple — to make car rental easy, accessible, and stress-free. We believe that
+                    everyone deserves a smooth and flexible transportation solution, and we’re here to deliver that
+                    experience every time you rent with us.</p>
+                <a href="About.php" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <!-- Review  -->
+    <sction class="reviews" id="reviews">
+        <div class="heading">
+            <span>Reviews</span>
+            <h1>Whats Our Customer Say</h1>
+        </div>
+        <div class="reviews-container">
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev1.jpg" alt="">
+                </div>
+                <h2>Keshav Somani</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Highly recommend this service</p>
+            </div>
+
+
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev2.jpg" alt="">
+                </div>
+                <h2>Rohit Sharma</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>best services in the town</p>
+            </div>
+
+
+            <div class="box">
+                <div class="rev-img">
+                    <img src="img/rev3.jpg" alt="">
+                </div>
+                <h2>Jennifer D'suza</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Best car rental experience I’ve had</p>
+            </div>
+        </div>
+    </sction>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Stay updated with the latest deals and offers.</p>
+            <form action="">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2023 CarRent. All rights reserved.</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                    <li><a href="#"><i class='bx bxl-linkedin'></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+
+
+    <!--Link to JS  -->
+    <script src="Main.js"></script>
+</body>
+
+</html>
